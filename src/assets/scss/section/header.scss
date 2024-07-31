@@ -2,12 +2,10 @@
 #header{
     @include position-fixed;
     z-index: 1000;
-
-
 }
 .header_inner{
     @include flex-between;
-    background-color: rgba(116, 99, 99, 0.1);
+    background-color: rgba(116,99,99,0.1);
     padding: 16px;
     backdrop-filter: blur(15px);
 
@@ -17,74 +15,83 @@
         text-align: center;
         line-height: 1;
 
-            em{
-                display: block;
-                font-size: 13px;
-            }
+        em{
+            display: block;
+            font-size: 13px;
+        }
+        
     }
     .header_nav{
-        @media(max-width:800px){
-            display: none;
-        }
 
         &.show{
             display: block;
+
             ul{
                 position: absolute;
                 right: 0;
                 top: 70px;
                 background-color: var(--subBg300);
                 backdrop-filter: blur(15px);
+                padding: 20px;
+
                 li{
                     display: block;
                     text-align: right;
                     a{
                         display: inline-block;
                         padding: 10px;
+                        color: var(--white);
                     }
                 }
             }
         }
 
-       
+        @media(max-width:800px){
+            display: none;
+        }
+        
             li{
                 display: inline;
-                
+
+
+               
                 a{
                     display: inline-block;
                     font-size: 14px;
                     padding: 15px;
                     text-transform: uppercase;
                     position: relative;
-
+                    
+                 
                     &::before{
                         content: "";
+                        width: calc( 100% - 28px);
                         height: 1px;
-                        width: calc(100% - 28px);
                         background-color: var(--black);
                         position: absolute;
                         left: 14px;
                         bottom: 10px;
                         transform: scale(0);
-                        transition: all 0.3s;
+                        transform-origin: left center;
+                        transition: transform 0.3s;
                     }
+
                     &:hover::before{
                         transform: scale(1);
                     }
                 }
             }
-        
+       
     }
-    .header_nav_mobile{
-        @media(max-width:800px) {
-            display: block;
-        }
-
+    .header_nav_moblie{
         display: none;
         width: 40px;
         height: 40px;
         cursor: pointer;
-    
+       
+        @media(max-width:800px){
+            display: block;
+        }
 
         span{
             display: block;
@@ -115,6 +122,6 @@
                 transition: width 0.3s;
             }
         }
+        
     }
-
 }

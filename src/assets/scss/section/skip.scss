@@ -1,10 +1,11 @@
 @charset "utf-8";
 #skip{
-    a {
+
+    a{
         position: absolute;
         left: 10px;
-        top: 0;
-        z-index: 1000;
+        top: -100px;
+        z-index: 10000;
         font-size: 16px;
         padding: 10px 30px;
         background-color: var(--black);
@@ -14,8 +15,7 @@
             top: 10px;
         }
         &:active{
-            
+            top: 10px;
         }
-
     }
 }
