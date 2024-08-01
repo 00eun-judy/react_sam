@@ -11,24 +11,21 @@ const skillText = [
     desc: "정직은 다른 사람보다 나에게 큰 의미를 부여한다.자신이 정직하지 않다면 진정으로 원하는 일을 열정적으로 밀고 나갈 수가 없다.마음에서 우러나오는 일을 해야 정직해지며 삶을 더 즐길 줄 알게된다."
   }
 ]
-
 const Skill = () => {
   return (
-    <section id="skill">
+    <section id='skill'>
       <div className="skill_inner">
-        <h2 className='skill_title'>
+        <div className="skill_title">
           Challenge <em>나의 도전</em>
-        </h2>
+        </div>
         <div className="skill_desc">
-          {skillText.map((skill, key) => (
+        {skillText.map((skill, key) => (
             <div key={key}>
               <span>{key+1}</span>
               <h3>{skill.title}</h3>
               <p>{skill.desc}</p>
             </div>
           ))}
-
-
         </div>
       </div>
     </section>
